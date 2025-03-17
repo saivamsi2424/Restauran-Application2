@@ -1,0 +1,132 @@
+.dish-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Border styles for non-veg and veg dishes */
+.veg-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.veg-round {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #4caf50; /* Green for veg */
+}
+
+.non-veg-border .veg-round {
+  background-color: #f44336; /* Red for non-veg */
+}
+
+/* Dish details container */
+.dish-details-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dish name */
+.dish-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 8px;
+}
+
+/* Dish price and currency */
+.dish-currency-price {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #28a745;
+  margin: 0 0 8px;
+}
+
+/* Dish description */
+.dish-description {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Text indicating that the dish is unavailable */
+.not-availability-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #d9534f; /* Red */
+  margin-top: 8px;
+}
+
+/* Text indicating customization availability */
+.addon-availability-text {
+  font-size: 1rem;
+  color: #17a2b8; /* Blue */
+  margin-top: 8px;
+}
+
+/* Calories text */
+.dish-calories {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #f39c12; /* Yellow */
+  margin-top: 16px;
+}
+
+/* Image of the dish */
+.dish-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-left: 16px;
+}
+
+/* Controller container for increasing/decreasing quantity */
+.controller-container {
+  display: flex;
+  align-items: center;
+  background-color: #28a745;
+  border-radius: 6px;
+  padding: 4px 12px;
+  color: white;
+}
+
+/* Quantity button styles */
+.button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+/* Quantity text */
+.quantity {
+  margin: 0 8px;
+  font-size: 1.125rem;
+}
+
+/* Container for the veg/non-veg indicator */
+.veg-border,
+.veg-round {
+  display: inline-block;
+}
+
+.me-3 {
+  margin-right: 16px;
+}
