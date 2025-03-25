@@ -19,7 +19,7 @@ const DishItem = ({dishDetails}) => {
   console.log(dishDetails)
 
   const [quantity, setQuantity] = useState(0)
-  const {addCartItem, cartList} = useContext(CartContext)
+  const {addCartItem} = useContext(CartContext)
 
   const onIncreaseQuantity = () => setQuantity(prevState => prevState + 1)
 
@@ -27,11 +27,6 @@ const DishItem = ({dishDetails}) => {
     setQuantity(prevState => (prevState > 0 ? prevState - 1 : 0))
 
   const onAddItemToCart = () => addCartItem({...dishDetails, quantity})
-
-  const getQuantity = dishId => {
-    const dishInCart = cartList.find(eachDish => eachDish.dishId === dishId)
-    return dishInCart ? dishInCart.quantity : 0
-  }
 
   const renderControllerButton = () => (
     <div className="controller-container d-flex align-items-center bg-success">

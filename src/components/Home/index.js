@@ -7,8 +7,14 @@ import CartContext from '../../context/CartContext'
 
 import './index.css'
 
+const apiConstants = {
+  initial: 'Initial',
+  success: 'Success',
+  failure: 'Failure',
+}
+
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [apiStatus, setApiStatus] = useState(apiConstants.initial)
   const [response, setResponse] = useState([])
   const [activeCategoryId, setActiveCategoryId] = useState('')
 
@@ -34,6 +40,7 @@ const Home = () => {
     }))
 
   const fetchRestaurantApi = async () => {
+    console.log(apiStatus)
     const api =
       'https://apis2.ccbp.in/restaurant-app/restaurant-menu-list-details'
     const apiResponse = await fetch(api)
@@ -42,7 +49,7 @@ const Home = () => {
     setResponse(updatedData)
     setRestaurantName(data[0].restaurant_name)
     setActiveCategoryId(updatedData[0].menuCategoryId)
-    setIsLoading(false)
+    setApiStatus(apiConstants.success)
   }
 
   useEffect(() => {
@@ -106,15 +113,36 @@ const Home = () => {
     </div>
   )
 
-  return isLoading ? (
-    renderSpinner()
-  ) : (
+  const onSuccessCall = () => (
     <div className="home-background">
       <Header cartItems={cartList} />
       <ul className="m-0 ps-0 d-flex tab-container">{renderTabMenuList()}</ul>
       {renderDishes()}
     </div>
   )
+
+  const onFailureCall = () => (
+    <div className="failure-container">
+      <button type="button" className="failure-button">
+        Request Failed
+      </button>
+    </div>
+  )
+
+  const renderOutput = () => {
+    switch (apiStatus) {
+      case apiConstants.initial:
+        return renderSpinner()
+      case apiConstants.success:
+        return onSuccessCall()
+      case apiConstants.failure:
+        return onFailureCall()
+      default:
+        return null
+    }
+  }
+
+  return renderOutput()
 }
 
 export default Home
