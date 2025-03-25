@@ -51,7 +51,7 @@ class Login extends Component {
         <input
           type="password"
           onChange={this.changePassword}
-          placeholder="Username"
+          placeholder="Password"
           id="password"
           value={password}
         />
@@ -72,7 +72,7 @@ class Login extends Component {
   onFormSubmit = async event => {
     event.preventDefault()
     const {userName, password} = this.state
-    const userDetails = {userName, password}
+    const userDetails = {username: userName, password}
     const url = 'https://apis.ccbp.in/login'
 
     const options = {
@@ -82,6 +82,7 @@ class Login extends Component {
 
     const response = await fetch(url, options)
     const data = await response.json()
+    console.log(response)
 
     if (response.ok === true) {
       this.onSubmitSucces(data.jwt_token)
@@ -95,12 +96,12 @@ class Login extends Component {
     return (
       <div className="login-form-container">
         <form className="form" onSubmit={this.onFormSubmit}>
-          {this.renderUserNameField}
-          {this.renderPasswordField}
+          {this.renderUserNameField()}
+          {this.renderPasswordField()}
           <button type="submit" className="submit-button">
-            Submit
+            Login
           </button>
-          {!showError && <p>{errorMessage}</p>}
+          {showError && <p>{errorMessage}</p>}
         </form>
       </div>
     )

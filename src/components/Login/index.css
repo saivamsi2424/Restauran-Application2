@@ -1,0 +1,92 @@
+/* Overall container for the login form */
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  padding: 0 20px;
+}
+
+/* Styling for the login form */
+.form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Form title */
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for input labels */
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Input fields */
+input[type='text'],
+input[type='password'] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Focus effect for inputs */
+input[type='text']:focus,
+input[type='password']:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff3333;
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 480px) {
+  .form {
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+  }
+}

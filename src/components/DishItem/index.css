@@ -1,132 +1,163 @@
+/* Dish Item Container */
 .dish-item-container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  margin-bottom: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 3px 4px 10px rgba(8, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s ease-in-out;
+  width: 80%;
 }
 
-/* Border styles for non-veg and veg dishes */
-.veg-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 12px;
+.dish-item-container:hover {
+  transform: scale(1.02);
 }
 
-.veg-round {
-  width: 15px;
-  height: 15px;
+/* Veg / Non-Veg Indicator */
+.veg-border,
+.non-veg-border {
+  width: 24px;
+  height: 24px;
+  border: 2px solid green;
   border-radius: 50%;
-  background-color: #4caf50; /* Green for veg */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.non-veg-border .veg-round {
-  background-color: #f44336; /* Red for non-veg */
+.non-veg-border {
+  border-color: red;
 }
 
-/* Dish details container */
+.veg-round,
+.non-veg-round {
+  width: 12px;
+  height: 12px;
+  background-color: green;
+  border-radius: 50%;
+}
+
+.non-veg-round {
+  background-color: red;
+}
+
+/* Dish Details */
 .dish-details-container {
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 0 15px;
 }
 
-/* Dish name */
 .dish-name {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #333;
-  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #343a40;
 }
 
-/* Dish price and currency */
 .dish-currency-price {
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 16px;
   color: #28a745;
-  margin: 0 0 8px;
+  font-weight: 500;
 }
 
-/* Dish description */
 .dish-description {
-  font-size: 0.875rem;
-  color: #555;
-  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
 }
 
-/* Text indicating that the dish is unavailable */
+/* Not Available Text */
 .not-availability-text {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #d9534f; /* Red */
-  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-/* Text indicating customization availability */
+/* Addon Availability */
 .addon-availability-text {
-  font-size: 1rem;
-  color: #17a2b8; /* Blue */
-  margin-top: 8px;
+  font-size: 14px;
+  color: #ff9800;
+  font-weight: 500;
 }
 
-/* Calories text */
+/* Dish Calories */
 .dish-calories {
-  font-size: 1rem;
-  font-weight: normal;
-  color: #f39c12; /* Yellow */
-  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
 }
 
-/* Image of the dish */
+/* Dish Image */
 .dish-image {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-left: 16px;
 }
 
-/* Controller container for increasing/decreasing quantity */
+/* Quantity Control Buttons */
 .controller-container {
   display: flex;
   align-items: center;
-  background-color: #28a745;
-  border-radius: 6px;
-  padding: 4px 12px;
-  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 
-/* Quantity button styles */
 .button {
-  background-color: transparent;
+  width: 30px;
+  height: 30px;
   border: none;
-  font-size: 1.5rem;
-  color: white;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 6px;
+  transition: background 0.3s ease-in-out;
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  background-color: #0056b3;
 }
 
-/* Quantity text */
 .quantity {
-  margin: 0 8px;
-  font-size: 1.125rem;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
 }
 
-/* Container for the veg/non-veg indicator */
-.veg-border,
-.veg-round {
-  display: inline-block;
+/* Add to Cart Button */
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  transition: all 0.3s ease-in-out;
 }
 
-.me-3 {
-  margin-right: 16px;
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dish-item-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dish-details-container {
+    padding: 10px 0;
+  }
+
+  .controller-container {
+    justify-content: center;
+  }
+
+  .dish-image {
+    width: 80px;
+    height: 80px;
+  }
 }
