@@ -94,15 +94,18 @@ class Login extends Component {
   render() {
     const {errorMessage, showError} = this.state
     return (
-      <div className="login-form-container">
-        <form className="form" onSubmit={this.onFormSubmit}>
-          {this.renderUserNameField()}
-          {this.renderPasswordField()}
-          <button type="submit" className="submit-button">
-            Login
-          </button>
-          {showError && <p>{errorMessage}</p>}
-        </form>
+      <div className="main-container">
+        <h1 className="main-heading">UNI Resto Cafe</h1>
+        <div className="login-form-container">
+          <form className="form" onSubmit={this.onFormSubmit}>
+            {this.renderUserNameField()}
+            {this.renderPasswordField()}
+            <button type="submit" className="submit-button">
+              Login
+            </button>
+            {showError && <p>{errorMessage}</p>}
+          </form>
+        </div>
       </div>
     )
   }

@@ -21,6 +21,13 @@
 .logo-heading:hover {
   color: #007bff;
 }
+.logout-button{
+  background-color: #dc3545;
+  padding:8px;
+  border-radius:8px;
+  color:white;
+  border-color:white ;
+}
 
 .my-orders-text {
   font-size: 16px;
@@ -28,6 +35,7 @@
   color: #007bff;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  margin: 10px;
 }
 
 .my-orders-text:hover {
@@ -104,6 +112,11 @@
   .cart-icon-button {
     font-size: 22px;
   }
+  .row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
@@ -149,4 +162,9 @@
     height: 16px;
     font-size: 10px;
   }
+}
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
